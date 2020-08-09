@@ -50,10 +50,10 @@ cd "$OUR_DIR"
 mkdir $DEPLOY_DIR/$N2LUA_PACKAGE
 
 # Create sub directories for all the files that we are deploying.
-mkdir $DEPLOY_DIR/$N2LUA_PACKAGE/bin
-mkdir $DEPLOY_DIR/$N2LUA_PACKAGE/inc
-mkdir $DEPLOY_DIR/$N2LUA_PACKAGE/lib
-mkdir $DEPLOY_DIR/$N2LUA_PACKAGE/man
+mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/bin
+mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/inc
+mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/lib
+mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
 
 # Compile the LUA source code.
 echo "# Compiling: N2LUA LUA Module"
@@ -73,11 +73,13 @@ cp lauxlib.h $DEPLOY_DIR/$N2LUA_PACKAGE/inc
 cp lua.hpp   $DEPLOY_DIR/$N2LUA_PACKAGE/inc
 
 # Lib files.
-cp liblua.a $DEPLOY_DIR/$N2LUA_PACKAGE/lib
+cp liblua.a  $DEPLOY_DIR/$N2LUA_PACKAGE/lib
+cp liblua.so $DEPLOY_DIR/$N2LUA_PACKAGE/lib
 
 # Man files.
-cp $OUR_DIR/$SRC_DIR/doc/lua.1  $DEPLOY_DIR/$N2LUA_PACKAGE/man
-cp $OUR_DIR/$SRC_DIR/doc/luac.1 $DEPLOY_DIR/$N2LUA_PACKAGE/man
+
+cp $OUR_DIR/$SRC_DIR/doc/lua.1  $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
+cp $OUR_DIR/$SRC_DIR/doc/luac.1 $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
 
 # Remove the generated perllocal.pod file to avoid overwriting the destination file.
 # TODO: Do we need this?

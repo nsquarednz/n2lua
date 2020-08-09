@@ -24,6 +24,12 @@ if have_any ../src/*.o; then
     rm ../src/*.o
 fi
 
+# SO files.
+if have_any ../src/*.so; then
+    echo "Removing existing compiled .so files."
+    rm ../src/*.so
+fi
+
 # A files.
 if have_any ../src/*.a; then
     echo "Removing existing compiled .a files."
