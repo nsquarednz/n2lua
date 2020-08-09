@@ -5,7 +5,7 @@ Summary: Powerful light-weight programming language
 Group: Development/Languages/C and C++
 License: MIT
 URL: http://www.lua.org/
-BuildArch: noarch
+BuildArch: x86_64
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %global n2luaRoot /opt/%{name}

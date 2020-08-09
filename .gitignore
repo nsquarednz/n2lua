@@ -4,3 +4,4 @@ src/luac
 src/lua
 src/liblua.a
 deploy
+pkg/rpms
