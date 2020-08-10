@@ -51,6 +51,7 @@ mkdir $DEPLOY_DIR/$N2LUA_PACKAGE
 
 # Create sub directories for all the files that we are deploying.
 mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/bin
+mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/etc
 mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/inc
 mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/lib
 mkdir -p $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
@@ -77,9 +78,11 @@ cp liblua.a  $DEPLOY_DIR/$N2LUA_PACKAGE/lib
 cp liblua.so $DEPLOY_DIR/$N2LUA_PACKAGE/lib
 
 # Man files.
-
 cp $OUR_DIR/$SRC_DIR/doc/lua.1  $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
 cp $OUR_DIR/$SRC_DIR/doc/luac.1 $DEPLOY_DIR/$N2LUA_PACKAGE/man/man1
+
+# Configuration files.
+cp $OUR_DIR/$SRC_DIR/etc/* $DEPLOY_DIR/$N2LUA_PACKAGE/etc/
 
 # Remove the generated perllocal.pod file to avoid overwriting the destination file.
 # TODO: Do we need this?

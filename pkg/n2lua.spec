@@ -16,9 +16,13 @@ N-Squared Software fork of V5.2.x of the LUA scripting language.
 
 %post
 
-#
-#  All build steps are done by build-packages.sh, there are no post install requirements.
-#
+# Check if we have previously installed a Dynaloader configuration file. If not we need to insert our template.
+if [ ! -e /etc/ld.so.conf.d/liblua.conf ]; then
+    cp /opt/%{name}/etc/liblua.conf /etc/ld.so.conf.d/liblua.conf
+    echo "Copied in /etc/ld.so.conf.d/liblua.conf reloading Dynaloader indexes..."
+    ldconfig
+    echo "Successfully reloaded Dynaloader indexes."    
+fi
 
 %prep
 
