@@ -8,7 +8,6 @@ Group: Development/Languages/C and C++
 License: MIT
 URL: http://www.lua.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Obsoletes: lua <= 5.2
 
 %global n2luaRoot /opt/%{name}
 %global _binaries_in_noarch_packages_terminate_build 0
