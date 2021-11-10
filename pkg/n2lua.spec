@@ -1,12 +1,14 @@
 Name: %(echo $PACKAGE)
 Version: %(echo $VERSION)
-Release: %(echo $RELEASE)
+# Release is passed through to our script. We concatenate on the dist flag.
+# Dist is a magic variable that will populate our version. I.E. EL8.
+Release: %(echo $RELEASE)%{?dist}
 Summary: Powerful light-weight programming language
 Group: Development/Languages/C and C++
 License: MIT
 URL: http://www.lua.org/
-BuildArch: x86_64
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Obsoletes: lua <= 5.2
 
 %global n2luaRoot /opt/%{name}
 %global _binaries_in_noarch_packages_terminate_build 0
