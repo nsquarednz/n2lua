@@ -13,7 +13,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %global _binaries_in_noarch_packages_terminate_build 0
 
 %description
-N-Squared Software fork of V5.2.x of the LUA scripting language.
+N-Squared Software fork of v5.2 of the LUA scripting language.
 
 %post
 
@@ -51,3 +51,6 @@ rm -rf %{buildroot}
 %{n2luaRoot}
 
 %changelog
+* Tue Apr 21 2026 N-Squared Support <support@nsquared.nz> - 5.2.4
+- Release 5.2.4 of the Lua scripting library and tools, packaged for RHEL9
+
