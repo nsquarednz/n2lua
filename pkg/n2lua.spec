@@ -48,9 +48,17 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{n2luaRoot}
+%{n2luaRoot}/bin
+%{n2luaRoot}/inc
+%{n2luaRoot}/lib
+%{n2luaRoot}/n2lua-build-version.txt
+%config(noreplace) %{n2luaRoot}/etc/liblua.conf
+%doc %{n2luaRoot}/man
 
 %changelog
+* Fri Jun 26 2026 N-Squared Support <support@nsquared.nz> - 5.2.5
+- Updated package information for clarity.
+
 * Tue Apr 21 2026 N-Squared Support <support@nsquared.nz> - 5.2.4
 - Release 5.2.4 of the Lua scripting library and tools, packaged for RHEL9
 
